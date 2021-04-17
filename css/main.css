@@ -15,16 +15,16 @@
 }
 
 @supports(padding:max(0px)) {
-    main, footer {
-        padding-left: min(0vmin, env(safe-area-inset-left));
-        padding-right: min(0vmin, env(safe-area-inset-right));
-    }
-	header {
-		padding-top: max(env(safe-area-inset-top), var(--hf-min-padding));
+	header, main {
         padding-left: max(env(safe-area-inset-left), var(--hf-min-padding));
         padding-right: max(env(safe-area-inset-right), var(--hf-min-padding));
 	}
+	header {
+		padding-top: max(env(safe-area-inset-top), var(--hf-min-padding));
+	}
 	footer {
+        padding-left: min(0vmin, env(safe-area-inset-left));
+        padding-right: min(0vmin, env(safe-area-inset-right));
 		padding-bottom: max(env(safe-area-inset-bottom), var(--hf-min-padding));
 	}
 }

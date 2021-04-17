@@ -11,23 +11,29 @@
 	
 	<script src="https://kit.fontawesome.com/4b3b9ce2b0.js" crossorigin="anonymous"></script>
 	<link rel="stylesheet" href="/css/main.css">
+	<link rel="stylesheet" href="/css/settingsScreen.css">
 	<script src="/js/main.js"></script>
 
 </head>
 
 <body>
 	<header>
-		<label onclick="window.history.back()"><i class="fas fa-chevron-left"></i></label>
-		<h1>To Watch</h1>
+		<label onclick="window.history.back()" style="visibility: visible"><i class="fas fa-chevron-left"></i></label>
+		<h1>Licences</h1>
 		<label></label>
 	</header>
-	<main></main>
+	<main>
+		<a class="settingsLink" href="licences/fontAwesome.html">
+			<label class="settingsText">Font Awesome</label>
+			<i class="fas fa-chevron-right"></i>
+		</a>
+	</main>
 	<footer>
 		<a href="/archived.html" class="footerButton" id="footer-Archive">
 			<i class="footerButton__icon fas fa-archive"></i>
 			<label class="footerButton__text">Archived</label>
 		</a>
-		<a href="/toWatch.html" class="footerButton current" id="footer-ToWatch">
+		<a href="/toWatch.html" class="footerButton" id="footer-ToWatch">
 			<i class="footerButton__icon fas fa-clipboard-list"></i>
 			<label class="footerButton__text">To Watch</label>
 		</a>
@@ -39,7 +45,7 @@
 			<i class="footerButton__icon fas fa-search"></i>
 			<label class="footerButton__text">Search</label>
 		</a>
-		<a href="/settings.html" class="footerButton" id="footer-Settings">
+		<a href="/settings.html" class="footerButton current" id="footer-Settings">
 			<i class="footerButton__icon fas fa-cog"></i>
 			<label class="footerButton__text">Settings</label>
 		</a>

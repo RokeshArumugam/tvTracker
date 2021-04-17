@@ -10,8 +10,9 @@
 	<title>TV Tracker</title>
 	
 	<script src="https://kit.fontawesome.com/4b3b9ce2b0.js" crossorigin="anonymous"></script>
-	<link rel="stylesheet" href="css/main.css">
-	<script src="js/main.js"></script>
+	<link rel="stylesheet" href="/css/main.css">
+	<link rel="stylesheet" href="/css/settingsScreen.css">
+	<script src="/js/main.js"></script>
 
 </head>
 
@@ -22,25 +23,37 @@
 		<label></label>
 	</header>
 	<main>
+		<a class="settingsLink" href="settings/appearance.html">
+			<label class="settingsText">Appearance</label>
+			<i class="fas fa-chevron-right"></i>
+		</a>
+		<a class="settingsLink" href="settings/notifications.html">
+			<label class="settingsText">Notifications</label>
+			<i class="fas fa-chevron-right"></i>
+		</a>
+		<a class="settingsLink" href="settings/licences.html">
+			<label class="settingsText">Licences</label>
+			<i class="fas fa-chevron-right"></i>
+		</a>
 	</main>
 	<footer>
-		<a href="archived.html" class="footerButton" id="footer-Archive">
+		<a href="/archived.html" class="footerButton" id="footer-Archive">
 			<i class="footerButton__icon fas fa-archive"></i>
 			<label class="footerButton__text">Archived</label>
 		</a>
-		<a href="toWatch.html" class="footerButton" id="footer-ToWatch">
+		<a href="/toWatch.html" class="footerButton" id="footer-ToWatch">
 			<i class="footerButton__icon fas fa-clipboard-list"></i>
 			<label class="footerButton__text">To Watch</label>
 		</a>
-		<a href="index.html" class="footerButton" id="footer-Watching">
+		<a href="/index.html" class="footerButton" id="footer-Watching">
 			<i class="footerButton__icon fas fa-tv"></i>
 			<label class="footerButton__text">Watching</label>
 		</a>
-		<a href="search.html" class="footerButton" id="footer-Search">
+		<a href="/search.html" class="footerButton" id="footer-Search">
 			<i class="footerButton__icon fas fa-search"></i>
 			<label class="footerButton__text">Search</label>
 		</a>
-		<a href="settings.html" class="footerButton current" id="footer-Settings">
+		<a href="/settings.html" class="footerButton current" id="footer-Settings">
 			<i class="footerButton__icon fas fa-cog"></i>
 			<label class="footerButton__text">Settings</label>
 		</a>
