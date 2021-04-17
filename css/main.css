@@ -3,6 +3,7 @@
 	--fg-color: white;
 	--hl-color: cyan;
 	--hf-color: rgb(56, 56, 56);
+	--hf-min-padding: 0.75em;
 }
 * {
 	margin: 0;
@@ -12,24 +13,26 @@
 	-webkit-tap-highlight-color: transparent;
 	user-select: none;
 }
-html {
-	width: 100vw;
-	height: 100vh;
-}
 
 @supports(padding:max(0px)) {
-    header, main, footer {
+    main, footer {
         padding-left: min(0vmin, env(safe-area-inset-left));
         padding-right: min(0vmin, env(safe-area-inset-right));
     }
 	header {
-		padding-top: max(env(safe-area-inset-top), 0.5em);
+		padding-top: max(env(safe-area-inset-top), var(--hf-min-padding));
+        padding-left: max(env(safe-area-inset-left), var(--hf-min-padding));
+        padding-right: max(env(safe-area-inset-right), var(--hf-min-padding));
 	}
 	footer {
-		padding-bottom: max(env(safe-area-inset-bottom), 0.5em);
+		padding-bottom: max(env(safe-area-inset-bottom), var(--hf-min-padding));
 	}
 }
 
+html {
+	width: 100vw;
+	height: 100vh;
+}
 body {
 	width: 100%;
 	height: 100%;
@@ -40,24 +43,46 @@ body {
 	color: var(--fg-color);
 	overflow: hidden;
 }
+
+
+/* ---------------- header ---------------- */
+
 header {
-	padding-bottom: 0.5em;
+	padding-bottom: var(--hf-min-padding);
 	display: flex;
 	align-items: center;
 	text-align: center;
 	background-color: var(--hf-color);
 	box-shadow: 0em 0em 1em var(--hl-color);
 }
-#headerTitle {
+header label {
+	display: grid;
+	place-items: center;
+	height: 2em;
+	width: 2em;
+	visibility: hidden;
+}
+header label i {
+	font-size: 1.6em;;
+}
+header h1 {
 	flex-grow: 1;
 }
+
+
+/* ---------------- main ---------------- */
+
 main {
 	flex-basis: 0px;
 	flex-grow: 1;
 	overflow: auto;
 }
+
+
+/* ---------------- footer ---------------- */
+
 footer {
-	padding-top: 0.5em;
+	padding-top: var(--hf-min-padding);
 	display: flex;
 	text-align: center;
 	background-color: var(--hf-color);
