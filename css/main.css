@@ -24,7 +24,7 @@ body {
 	color: var(--fg-color);
 }
 header {
-	padding-top: calc(env(safe-area-inset-top) + 0.5em);
+	padding-top: max(env(safe-area-inset-top), 0.5em);
 	padding-bottom: 0.5em;
 	display: flex;
 	align-items: center;
@@ -42,7 +42,7 @@ main {
 }
 footer {
 	padding-top: 0.5em;
-	padding-bottom: calc(env(safe-area-inset-bottom) + 0.5em);
+	padding-bottom: max(env(safe-area-inset-bottom), 0.5em);
 	display: flex;
 	text-align: center;
 	background-color: var(--hf-color);
@@ -57,13 +57,14 @@ footer {
 	text-decoration: none;
 	color: inherit;
 }
-.footerButton__icon {
-	font-size: 1.5em;
-}
 .current {
 	color: var(--hl-color);
+}
+.footerButton__icon {
+	font-size: 1.6em;
 }
 .footerButton__text {
 	flex-grow: 1;
 	padding: 0.2em;
+	font-size: 0.9em;
 }
