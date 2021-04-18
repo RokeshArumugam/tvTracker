@@ -48,6 +48,7 @@
 	<!-- <link rel="stylesheet" href="css/fontawesome/css/fontawesome.min.css">
 	<link rel="stylesheet" href="css/fontawesome/css/all.min.css"> -->
 	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/searchBar.css">
 	<link rel="stylesheet" href="css/cardScreen.css">
 	<script src="js/main.js"></script>
 	<script defer src="js/watching.js"></script>
@@ -61,21 +62,10 @@
 		<label></label>
 	</header>
 	<main>
-		<template id="cardTemplate">
-			<div class="cardContainer">
-				<div class="cardPulse"></div>
-				<div class="card">
-					<div class="card__imgContainer">
-						<img src="" class="card__img">
-					</div>
-					<span class="card__title"></span>
-					<div class="card__progressContainer">
-						<div class="card__progressText"></div>
-						<div class="card__progressBar"></div>
-					</div>
-				</div>
-			</div>
-		</template>
+		<div class="searchBar">
+			<input type=text class="searchInput" placeholder="Search in Watching"></input>
+			<i class="searchButton fas fa-search"></i>
+		</div>
 		<div class="cardsGrid">
 		</div>
 	</main>
@@ -101,6 +91,21 @@
 			<label class="footerButton__text">Settings</label>
 		</a>
 	</footer>
+	<template id="cardTemplate">
+		<div class="cardContainer">
+			<div class="cardPulse"></div>
+			<div class="card">
+				<div class="card__imgContainer">
+					<img src="" class="card__img">
+				</div>
+				<span class="card__title"></span>
+				<div class="card__progressContainer">
+					<div class="card__progressText"></div>
+					<div class="card__progressBar"></div>
+				</div>
+			</div>
+		</div>
+	</template>
 
 
 </body>

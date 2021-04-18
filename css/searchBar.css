@@ -1,0 +1,21 @@
+.searchBar {
+	width: 80%;
+	height: 2em;
+	align-self: center;
+	display: flex;
+	align-items: center;
+	border-radius: 1em;
+	background-color: var(--fg-color);
+	padding: 0.25em 0.5em;
+}
+.searchInput {
+	height: 100%;
+	flex-grow: 1;
+	outline: none;
+	border: none;
+	background: none;
+}
+.searchButton {
+	color: var(--bg-color);
+	margin: 0.25em;
+}

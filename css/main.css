@@ -80,6 +80,9 @@ main {
 	flex-basis: 0px;
 	flex-grow: 1;
 	overflow: auto;
+	display: flex;
+	flex-direction: column;
+	padding-top: 1em;
 }
 
 

@@ -50,30 +50,33 @@ function updateShowProgress(card, showTitle) {
 	let progressBar = card.querySelector(".card__progressBar");
 	progressBar.style.setProperty("--data-total", shows[showTitle].season_episode_count);
 	progressBar.style.setProperty("--data-completed", shows[showTitle].current_episode);
-}
+};
 
-for(let [showTitle, showInfo] of Object.entries(shows)) {
-	let newCard = cardTemplate.cloneNode(true);
+function displayCards() {
+	let entries = Object.entries(shows);
+	for (let [showTitle, showInfo] of entries) {
+		let newCard = cardTemplate.cloneNode(true);
 
-	newCard.querySelector(".card__img").src = showInfo.img_url;
-	newCard.querySelector(".card__imgContainer").onclick = (evt) => {
-		console.log(evt.srcElement)
-		let card = evt.target.parentElement;
-		let cardPulse = card.previousElementSibling;
-		cardPulse.classList.remove('pulse');
-		void cardPulse.offsetWidth;
-		cardPulse.classList.add('pulse');
+		newCard.querySelector(".card__img").src = showInfo.img_url;
+		newCard.querySelector(".card__imgContainer").onclick = (evt) => {
+			let card = evt.target.parentElement;
+			let cardPulse = card.previousElementSibling;
+			cardPulse.classList.remove('pulse');
+			void cardPulse.offsetWidth;
+			cardPulse.classList.add('pulse');
 
-		let showTitle = card.querySelector(".card__title").innerText;
-		shows[showTitle].current_episode += 1;
-		if (shows[showTitle].current_episode > shows[showTitle].season_episode_count) {
-			shows[showTitle].current_episode = 1;
-			shows[showTitle].current_season += 1; 
-		}
-		updateShowProgress(card, showTitle);
-	};
+			let showTitle = card.querySelector(".card__title").innerText;
+			shows[showTitle].current_episode += 1;
+			if (shows[showTitle].current_episode > shows[showTitle].season_episode_count) {
+				shows[showTitle].current_episode = 1;
+				shows[showTitle].current_season += 1;
+			}
+			updateShowProgress(card, showTitle);
+		};
 
-	newCard.querySelector(".card__title").innerText = showTitle;
-	updateShowProgress(newCard, showTitle);
-	cardsGrid.appendChild(newCard);
-} 
+		newCard.querySelector(".card__title").innerText = showTitle;
+		updateShowProgress(newCard, showTitle);
+		cardsGrid.appendChild(newCard);
+	}
+};
+displayCards();
