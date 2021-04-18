@@ -2,7 +2,7 @@
 	--bg-color: black;
 	--fg-color: white;
 	--hl-color: cyan;
-	--hf-color: rgb(56, 56, 56);
+	--hf-color: rgb(40, 40, 40);
 	--hf-min-padding: 0.75em;
 }
 * {
@@ -54,6 +54,7 @@ header {
 	text-align: center;
 	background-color: var(--hf-color);
 	box-shadow: 0em 0em 1em var(--hl-color);
+	z-index: 1;
 }
 header label {
 	display: grid;
@@ -87,6 +88,7 @@ footer {
 	text-align: center;
 	background-color: var(--hf-color);
 	box-shadow: 0em 0em 1em var(--hl-color);
+	z-index: 1;
 }
 .footerButton {
 	flex-grow: 1;
