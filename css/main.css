@@ -42,6 +42,7 @@ body {
 	background-color: var(--bg-color);
 	color: var(--fg-color);
 	overflow: hidden;
+	position: fixed;
 }
 header, footer {
 	z-index: 1;
