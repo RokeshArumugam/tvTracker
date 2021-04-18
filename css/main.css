@@ -43,6 +43,11 @@ body {
 	color: var(--fg-color);
 	overflow: hidden;
 }
+header, footer {
+	z-index: 1;
+	background-color: var(--hf-color);
+	box-shadow: 0em 0em 1em var(--hl-color);
+}
 
 
 /* ---------------- header ---------------- */
@@ -52,9 +57,6 @@ header {
 	display: flex;
 	align-items: center;
 	text-align: center;
-	background-color: var(--hf-color);
-	box-shadow: 0em 0em 1em var(--hl-color);
-	z-index: 1;
 }
 header label {
 	display: grid;
@@ -86,9 +88,6 @@ footer {
 	padding-top: var(--hf-min-padding);
 	display: flex;
 	text-align: center;
-	background-color: var(--hf-color);
-	box-shadow: 0em 0em 1em var(--hl-color);
-	z-index: 1;
 }
 .footerButton {
 	flex-grow: 1;

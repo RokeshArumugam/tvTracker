@@ -1,4 +1,4 @@
-.cardsContainer {
+.cardsGrid {
 	--grid-cell-minWidth: 9em;
 	--grid-cell-height: 15em;
 	display: grid;
@@ -6,9 +6,124 @@
 	grid-auto-rows: var(--grid-cell-height);
 	place-items: center;
 }
-.card {
-	background-color: var(--hf-color);
+.cardContainer {
 	width: 7.4em;
 	height: 12em;
 	border-radius: 1em;
+	box-shadow: 0em 0em 0.5em var(--hl-color);
+	position: relative;
+}
+.cardPulse {
+	position: absolute;
+	width: calc(100% - 2px);
+	height: calc(100% - 2px);
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	border-radius: inherit;
+	background-color: lime;
+	z-index: -1;
+}
+.cardPulse.pulse {
+	animation: 0.5s ease-in-out 0s forwards pulse;
+}
+.card {
+	background-color: var(--hf-color);
+	width: 100%;
+	height: 100%;
+	border-radius: inherit;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+@keyframes pulse {
+	from {
+		transform: translate(-50%, -50%), scale(1);
+		opacity: 0.8;
+	}
+	to {
+		transform: translate(-50%, -50%) scale(1.2, 1.125);
+		opacity: 0;
+	}
+}
+
+
+/* ---------------- image ---------------- */
+
+.card__imgContainer {
+	width: 100%;
+	height: 40%;
+	position: relative;
+	border-top-left-radius: inherit;
+	border-top-right-radius: inherit;
+	overflow: hidden;
+}
+.card__imgContainer::after {
+	content: "\f067";
+	font-family: "Font Awesome 5 Free";
+	font-weight: 900;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	color: var(--bg-color);
+	opacity: 0.8;
+	text-shadow: 0em 0em 0.25em var(--hl-color);
+	font-size: 3em;
+}
+.card__img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	pointer-events: none;
+}
+
+
+/* ---------------- title ---------------- */
+
+.card__title {
+	display: -webkit-box;
+	-webkit-line-clamp: 3;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+	color: var(--fg-color);
+	margin: 0.2em 0.5em;
+	font-size: 1.1em;
+}
+
+
+/* ---------------- progress ---------------- */
+
+.card__progressContainer {
+	height: 4em;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	padding: 0.25em 0.75em;
+	text-align: center;
+	font-size: 0.8em;
+}
+.card__progressContainer > * {
+	width: 100%;
+}
+.card__progressText {
+	font-weight: bold;
+}
+.card__progressBar {
+	height: 0.75em;
+	border-radius: 1em;
+	background-color: var(--bg-color);
+	position: relative;
+	overflow: hidden;
+}
+.card__progressBar::after {
+	content: "";
+	position: absolute;
+	height: 100%;
+	left: 0;
+	width: calc(var(--data-completed) / var(--data-total) * 100%);
+	border-radius: inherit;
+	border-top-left-radius: 0;
+	border-bottom-left-radius: 0;
+	background-color: lime;
 }

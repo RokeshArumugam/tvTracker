@@ -50,6 +50,7 @@
 	<link rel="stylesheet" href="css/main.css">
 	<link rel="stylesheet" href="css/cardScreen.css">
 	<script src="js/main.js"></script>
+	<script defer src="js/watching.js"></script>
 
 </head>
 
@@ -60,23 +61,22 @@
 		<label></label>
 	</header>
 	<main>
-		<div class="cardsContainer">
-			<div class="card">
-				<img src="" class="card__img">
-				<span class="card__title"></span>
+		<template id="cardTemplate">
+			<div class="cardContainer">
+				<div class="cardPulse"></div>
+				<div class="card">
+					<div class="card__imgContainer">
+						<img src="" class="card__img">
+					</div>
+					<span class="card__title"></span>
+					<div class="card__progressContainer">
+						<div class="card__progressText"></div>
+						<div class="card__progressBar"></div>
+					</div>
+				</div>
 			</div>
-			<div class="card">
-				<img src="" class="card__img">
-				<span class="card__title"></span>
-			</div>
-			<div class="card">
-				<img src="" class="card__img">
-				<span class="card__title"></span>
-			</div>
-			<div class="card">
-				<img src="" class="card__img">
-				<span class="card__title"></span>
-			</div>
+		</template>
+		<div class="cardsGrid">
 		</div>
 	</main>
 	<footer>
