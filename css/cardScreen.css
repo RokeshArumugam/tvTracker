@@ -14,9 +14,11 @@
 	position: relative;
 }
 .cardPulse {
+	--width: calc(100% - 2px);
+	--height: calc(100% - 2px);
 	position: absolute;
-	width: calc(100% - 2px);
-	height: calc(100% - 2px);
+	width: var(--width);
+	height: var(--height);
 	left: 50%;
 	top: 50%;
 	transform: translate(-50%, -50%);
@@ -38,11 +40,13 @@
 }
 @keyframes pulse {
 	from {
-		transform: translate(-50%, -50%), scale(1);
+		width: var(--width);
+		height: var(--height);
 		opacity: 0.8;
 	}
 	to {
-		transform: translate(-50%, -50%) scale(1.2, 1.125);
+		width: calc(var(--width) + 1.5em);
+		height: calc(var(--height) + 1.5em);
 		opacity: 0;
 	}
 }
