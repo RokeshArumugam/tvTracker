@@ -6,6 +6,11 @@
   "background_color": "#000",
   "theme_color": "#000",
   "orientation": "portrait",
+  "splash_pages": {
+    "enabled": true,
+    "background_color": "#000",
+    "image_url": "assets/manifest-icon-512.png"
+  },
   "icons": [
     {
       "src": "assets/manifest-icon-192.png",
